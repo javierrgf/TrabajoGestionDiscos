@@ -3,11 +3,21 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un disco con título, artista y año de lanzamiento.
+ */
 class Disco {
     private String titulo;
     private String artista;
     private int anio;
 
+    /**
+     * Constructor de la clase Disco.
+     *
+     * @param titulo  Título del disco.
+     * @param artista Artista del disco.
+     * @param anio    Año de lanzamiento.
+     */
     public Disco(String titulo, String artista, int anio) {
         this.titulo = titulo;
         this.artista = artista;
@@ -32,13 +42,26 @@ class Disco {
     }
 }
 
+/**
+ * Clase que gestiona una colección de discos, permitiendo agregar, mostrar y eliminar discos.
+ */
 public class GestionDiscos {
     private ArrayList<Disco> discos;
 
+    /**
+     * Constructor de la clase GestionDiscos.
+     */
     public GestionDiscos() {
         discos = new ArrayList<>();
     }
 
+    /**
+     * Agrega un disco a la colección.
+     *
+     * @param titulo  Título del disco.
+     * @param artista Artista del disco.
+     * @param anio    Año de lanzamiento.
+     */
     public void agregarDisco(String titulo, String artista, int anio) {
         if (titulo == null || titulo.trim().isEmpty()) {
             System.out.println("El título del disco no puede estar vacío.");
@@ -57,6 +80,9 @@ public class GestionDiscos {
         System.out.println("Disco agregado: " + nuevoDisco);
     }
 
+    /**
+     * Muestra todos los discos de la colección.
+     */
     public void mostrarDiscos() {
         if (discos.isEmpty()) {
             System.out.println("La lista de discos está vacía.");
@@ -70,6 +96,11 @@ public class GestionDiscos {
         }
     }
 
+    /**
+     * Elimina un disco de la colección según el título.
+     *
+     * @param titulo Título del disco a eliminar.
+     */
     public void eliminarDisco(String titulo) {
         boolean encontrado = false;
         Iterator<Disco> iterator = discos.iterator();
